@@ -4,6 +4,7 @@ const theme = {
         INPUT: "#D9D9D9",
         BUTTON: "#33842C",
         TEXT: "#FFFFFF",
+        ICON: "#FFFFFF",
     },
     SIZE: {
         TITLE_MAIN: 35,
