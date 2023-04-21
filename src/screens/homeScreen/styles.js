@@ -3,7 +3,6 @@ import Icon from '@expo/vector-icons/MaterialCommunityIcons';
 
 export const Container = styled.View`
     flex: 1;
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
     padding-horizontal: 25px;
 `;
 
@@ -26,6 +25,7 @@ export const Button = styled.TouchableOpacity`
     padding: 5px;
     width: 230px;
     height: 200px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 export const ButtonIcon = styled(Icon)`
