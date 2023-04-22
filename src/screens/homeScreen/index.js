@@ -11,9 +11,11 @@ import {
 import Header from "../../components/headerLogo";
 import GeneralContainer from "../../components/GeneralContainer";
 
-const homeScreen = () => {
+const homeScreen = ({ navigation }) => {
+  const { navigate } = navigation;
+
   const goToSchedule = () => {
-    // Aqui chama a proxima rota
+    navigate("SelectDate");
   };
 
   return (
