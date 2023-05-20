@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { View, Text } from "react-native";
 import Header from "../../components/headerLogo";
 import GeneralContainer from "../../components/GeneralContainer";
 import {
@@ -10,14 +9,15 @@ import {
   SubTitle,
   Title,
 } from "./styles";
-import ButtonList from "../../components/ButtonList";
 import Input from "../../components/Input";
 import Check from "./components/check";
 import { createOrEditClass } from "../../utils/store";
 import {ToastAndroid} from 'react-native';
+import moment from "moment/moment";
+import NotificationsEvent from "../../utils/notifications";
 
-const propsScreen = ({ navigation, route }) => {
-  const { navigate, goBack } = navigation;
+const PropsScreen = ({ navigation, route }) => {
+  const { navigate } = navigation;
   const { params } = route;
 
   const [unity, setUnity] = useState("");
@@ -42,9 +42,6 @@ const propsScreen = ({ navigation, route }) => {
     }
   }, []);
 
-  // const goToClassRoom = (id, description) => {
-  //   navigate("SelectClassroom", { id: id, description: description });
-  // };
 
   const setTimeChecked = (time) => {
     if (checked === time) {
@@ -66,7 +63,7 @@ const propsScreen = ({ navigation, route }) => {
       params && params.data
         ? params.data.idclass
         : Math.random().toString(36).slice(2, 7);
-    console.log("id", id);
+
     const data = {
       idclass: id,
       unity,
@@ -74,7 +71,10 @@ const propsScreen = ({ navigation, route }) => {
       room,
       notify: checked,
       hour,
+      weekDay: moment().day()
     };
+
+    NotificationsEvent({ week: params.id, items: data});
 
     const response = await createOrEditClass({
       idweek: params.id,
@@ -83,7 +83,7 @@ const propsScreen = ({ navigation, route }) => {
 
     if (response) {
       ToastAndroid.show(params && params.data ? "Aula atualizada!" : "Aula adicionada!", ToastAndroid.LONG);
-      goBack();
+      navigate('Home');
     }
   };
 
@@ -95,7 +95,7 @@ const propsScreen = ({ navigation, route }) => {
         <Input label="Unidade" value={unity} setValue={setUnity} />
         <Input label="Curso" value={course} setValue={setCourse} />
         <Input label="Sala" value={room} setValue={setRoom} />
-        <Input label="Horário" value={hour} setValue={setHour} type="numeric" />
+        <Input label="Horário" value={hour} setValue={setHour} masked={true} type="numeric"/>
         <SubTitle>Receber notificações faltando</SubTitle>
         <Check
           label="10 Minutos"
@@ -123,4 +123,4 @@ const propsScreen = ({ navigation, route }) => {
   );
 };
 
-export default propsScreen;
+export default PropsScreen;

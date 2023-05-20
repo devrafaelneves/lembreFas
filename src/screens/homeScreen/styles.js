@@ -14,7 +14,7 @@ export const Body = styled.View`
 
 export const Title = styled.Text`
     color: ${({ theme }) => theme.COLORS.TEXT};
-    font-size: ${({ theme }) => theme.SIZE.TITLE_MAIN};
+    font-size: ${({ theme }) => theme.SIZE.TITLE_MAIN}px;
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -36,5 +36,5 @@ export const ButtonIcon = styled(Icon)`
 
 export const ButtonText = styled.Text`
     color: ${({ theme }) => theme.COLORS.TEXT};
-    font-size: ${({ theme }) => theme.SIZE.INPUT};
+    font-size: ${({ theme }) => theme.SIZE.INPUT}px;
 `;

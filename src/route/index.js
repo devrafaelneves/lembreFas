@@ -3,7 +3,7 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import styled from "styled-components/native";
+import styled, { useTheme } from "styled-components/native";
 
 import {
   homeScreen,
@@ -11,7 +11,7 @@ import {
   dateScreen,
   propsScreen,
 } from "../screens";
-import { Button, Text, TouchableOpacity } from "react-native";
+import {StatusBar } from "react-native";
 import { TabBar, TabBarRenderIcon } from "../components/TabBar";
 
 const Stack = createNativeStackNavigator();
@@ -49,8 +49,10 @@ const TabSchema = () => {
 };
 
 const Route = () => {
+  const theme = useTheme();
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor={theme.COLORS.BACKGROUND} barStyle={"light-content"} />
       <AreaSegura>
         <Stack.Navigator
           initialRouteName="Home"

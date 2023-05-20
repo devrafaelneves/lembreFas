@@ -5,7 +5,7 @@ import GeneralContainer from "../../components/GeneralContainer";
 import { Body, Title } from "./styles";
 import ButtonList from "../../components/ButtonList";
 
-const dateScreen = ({ navigation }) => {
+const DateScreen = ({ navigation }) => {
   const { navigate } = navigation;
 
   const goToClassRoom = (id, description) => {
@@ -51,4 +51,4 @@ const dateScreen = ({ navigation }) => {
   );
 };
 
-export default dateScreen;
+export default DateScreen;

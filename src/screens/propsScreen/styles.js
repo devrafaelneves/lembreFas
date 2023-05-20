@@ -7,7 +7,7 @@ export const Body = styled.ScrollView`
 
 export const Title = styled.Text`
   color: ${({ theme }) => theme.COLORS.TEXT};
-  font-size: ${({ theme }) => theme.SIZE.TITLE_SUB};
+  font-size: ${({ theme }) => theme.SIZE.TITLE_SUB}px;
   text-align: center;
   margin-bottom: 40px;
 `;
@@ -33,7 +33,7 @@ export const ButtonIcon = styled(Icon)`
 
 export const ButtonText = styled.Text`
   color: ${({ theme }) => theme.COLORS.TEXT};
-  font-size: ${({ theme }) => theme.SIZE.INPUT};
+  font-size: ${({ theme }) => theme.SIZE.INPUT}px;
 `;
 
 export const SubTitle = styled.Text`

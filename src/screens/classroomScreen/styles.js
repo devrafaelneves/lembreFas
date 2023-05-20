@@ -6,9 +6,15 @@ export const Body = styled.View`
   margin-bottom: 20px;
 `;
 
+export const BodyCentered = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Title = styled.Text`
   color: ${({ theme }) => theme.COLORS.TEXT};
-  font-size: ${({ theme }) => theme.SIZE.TITLE_SUB};
+  font-size: ${({ theme }) => theme.SIZE.TITLE_SUB}px;
   text-align: center;
   margin-bottom: 40px;
 `;
@@ -32,5 +38,5 @@ export const ButtonIcon = styled(Icon)`
 
 export const ButtonText = styled.Text`
   color: ${({ theme }) => theme.COLORS.TEXT};
-  font-size: ${({ theme }) => theme.SIZE.INPUT};
+  font-size: ${({ theme }) => theme.SIZE.INPUT}px;
 `;

@@ -11,7 +11,7 @@ import {
 import Header from "../../components/headerLogo";
 import GeneralContainer from "../../components/GeneralContainer";
 
-const homeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation }) => {
   const { navigate } = navigation;
 
   const goToSchedule = () => {
@@ -32,4 +32,4 @@ const homeScreen = ({ navigation }) => {
   );
 };
 
-export default homeScreen;
+export default HomeScreen;
