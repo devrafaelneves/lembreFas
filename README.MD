@@ -13,6 +13,8 @@
 - [Autor](#autor)
 --- 
 ## Overview
+Projeto desenvolvido em React Native para agendamento de Atividades com Local Notification.
+
 
 ## Uso
 
@@ -41,3 +43,4 @@ npx expo start
 
 
 ## Autor
+Rafael Neves de Sousa e Rafael Souza Santos
